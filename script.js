@@ -7,16 +7,22 @@ console.log(input);
 console.log(mainDiv);
 
 submit.addEventListener("click", function() {
+    
+    while (mainDiv.hasChildNodes()) {
+        mainDiv.removeChild(mainDiv.firstChild);
+    }
+
     console.log(input.value)
     let inputValue = input.value;
     if (inputValue > 100) {
         inputValue = 100;
     };
     console.log(inputValue);
+    let randomColor = function() {
+        return Math.random() * 255;
+    };
     for (let i = 1; i <= inputValue; i++) {
-        let randomColor = function() {
-            return Math.random() * 255;
-        };
+        
         let row = document.createElement("div");
         console.log(row);
         row.className = "row";
@@ -31,4 +37,11 @@ submit.addEventListener("click", function() {
         };
         
     };
-})
+    const allTiles = document.querySelectorAll(".tile");
+for (let i = 0; i < allTiles.length; i++) {
+    allTiles[i].addEventListener("mouseover", function() {
+        allTiles[i].style.backgroundColor = "rgb(" + randomColor() + ", " + randomColor() + ", " + randomColor() + ")";
+    });
+};
+});
+
