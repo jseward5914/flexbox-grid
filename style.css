@@ -1,0 +1,25 @@
+#main {
+    display: flex;
+    flex-direction: column;
+    
+    width: 960px;
+    height: 960px;
+}
+
+.row {
+    flex-direction: row;
+    
+    float: left;
+    display: flex;
+    height: 200px;
+    width: 100%;
+    gap: 0px;
+}
+
+.tile {
+    float: left;
+    flex-wrap: wrap;
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
